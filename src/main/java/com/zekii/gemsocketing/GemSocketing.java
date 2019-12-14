@@ -1,6 +1,10 @@
 package com.zekii.gemsocketing;
 
+import com.zekii.gemsocketing.blocks.FunkyBlock;
+import com.zekii.gemsocketing.blocks.ModBlocks;
 import net.minecraft.block.Block;
+import net.minecraft.item.BlockItem;
+import net.minecraft.item.Item;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -30,6 +34,13 @@ public class GemSocketing {
     public static class RegistryEvents {
         @SubscribeEvent
         public static void onBlocksRegistry(final RegistryEvent.Register<Block> blockRegistryEvent) {
+            blockRegistryEvent.getRegistry().register(new FunkyBlock());
+        }
+
+        @SubscribeEvent
+        public static void onItemsRegistry(final RegistryEvent.Register<Item> itemRegistryEvent) {
+            itemRegistryEvent.getRegistry().register(new BlockItem(ModBlocks.FUNKYBLOCK, new Item.Properties()
+            ).setRegistryName("funkyblock"));
         }
     }
 }
