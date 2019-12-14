@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "x x",
+    "v v",
+    "   "
+  ],
+  "key": {
+    "x": {
+      "item": "minecraft:cobblestone"
+    },
+    "v": {
+      "tag": "forge:dyes/blue"
+    }
+  },
+  "result": {
+    "item": "gemsocketing:funkyblock"
+  }
+}
