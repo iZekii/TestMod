@@ -2,6 +2,7 @@ package com.zekii.gemsocketing;
 
 import com.zekii.gemsocketing.blocks.FunkyBlock;
 import com.zekii.gemsocketing.blocks.ModBlocks;
+import com.zekii.gemsocketing.items.FunkyItem;
 import com.zekii.gemsocketing.setup.ClientProxy;
 import com.zekii.gemsocketing.setup.IProxy;
 import com.zekii.gemsocketing.setup.ModSetup;
@@ -45,14 +46,15 @@ public class GemSocketing {
     @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
     public static class RegistryEvents {
         @SubscribeEvent
-        public static void onBlocksRegistry(final RegistryEvent.Register<Block> blockRegistryEvent) {
-            blockRegistryEvent.getRegistry().register(new FunkyBlock());
+        public static void onBlocksRegistry(final RegistryEvent.Register<Block> event) {
+            event.getRegistry().register(new FunkyBlock());
         }
 
         @SubscribeEvent
-        public static void onItemsRegistry(final RegistryEvent.Register<Item> itemRegistryEvent) {
+        public static void onItemsRegistry(final RegistryEvent.Register<Item> event) {
             Item.Properties properties = new Item.Properties().group(setup.itemGroup);
-            itemRegistryEvent.getRegistry().register(new BlockItem(ModBlocks.FUNKYBLOCK, properties).setRegistryName("funkyblock"));
+            event.getRegistry().register(new BlockItem(ModBlocks.FUNKYBLOCK, properties).setRegistryName("funkyblock"));
+            event.getRegistry().register(new FunkyItem());
         }
     }
 }
