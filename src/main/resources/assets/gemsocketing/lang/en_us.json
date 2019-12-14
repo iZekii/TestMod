@@ -1,3 +1,6 @@
 {
-  "block.gemsocketing.funkyblock": "Funky Block"
+  "block.gemsocketing.funkyblock": "Funky Block",
+
+  "_comment": "Creative Tab",
+  "itemGroup.gemsocketing": "Gem Socketing"
 }
