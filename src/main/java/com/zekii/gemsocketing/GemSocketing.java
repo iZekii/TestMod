@@ -7,6 +7,7 @@ import com.zekii.gemsocketing.setup.ClientProxy;
 import com.zekii.gemsocketing.setup.IProxy;
 import com.zekii.gemsocketing.setup.ModSetup;
 import com.zekii.gemsocketing.setup.ServerProxy;
+import com.zekii.gemsocketing.worldgen.OreGeneration;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -24,20 +25,21 @@ import org.apache.logging.log4j.Logger;
 @Mod("gemsocketing")
 public class GemSocketing {
 
-    public static IProxy proxy = DistExecutor.runForDist(() -> () -> new ClientProxy(), () -> () -> new ServerProxy());
+    private static IProxy proxy = DistExecutor.runForDist(() -> ClientProxy::new, () -> ServerProxy::new);
 
     public static ModSetup setup = new ModSetup();
 
     private static final Logger LOGGER = LogManager.getLogger();
 
     public GemSocketing() {
-        // Register the setup method for modloading
+        // Register the setup method for mod loading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
     }
 
     private void setup(final FMLCommonSetupEvent event) {
         setup.init();
         proxy.init();
+        OreGeneration.SetupOreGen();
     }
 
 
