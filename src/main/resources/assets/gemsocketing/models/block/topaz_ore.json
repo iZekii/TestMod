@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "particle": "gemsocketing:block/topaz_ore",
+    "all": "gemsocketing:block/topaz_ore"
+  }
+}

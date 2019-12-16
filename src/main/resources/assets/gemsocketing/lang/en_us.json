@@ -2,6 +2,9 @@
   "item.gemsocketing.amethyst": "Amethyst",
   "block.gemsocketing.amethyst_ore": "Amethyst Ore",
 
+  "item.gemsocketing.topaz": "Topaz",
+  "block.gemsocketing.topaz_ore": "Topaz Ore",
+
   "_comment": "Creative Tab",
   "itemGroup.gemsocketing": "Gem Socketing"
 }

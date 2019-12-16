@@ -2,7 +2,9 @@ package com.zekii.gemsocketing;
 
 import com.zekii.gemsocketing.blocks.AmethystOre;
 import com.zekii.gemsocketing.blocks.ModBlocks;
+import com.zekii.gemsocketing.blocks.TopazOre;
 import com.zekii.gemsocketing.items.Amethyst;
+import com.zekii.gemsocketing.items.Topaz;
 import com.zekii.gemsocketing.setup.ClientProxy;
 import com.zekii.gemsocketing.setup.IProxy;
 import com.zekii.gemsocketing.setup.ModSetup;
@@ -50,6 +52,7 @@ public class GemSocketing {
         @SubscribeEvent
         public static void onBlocksRegistry(final RegistryEvent.Register<Block> event) {
             event.getRegistry().register(new AmethystOre());
+            event.getRegistry().register(new TopazOre());
         }
 
         @SubscribeEvent
@@ -57,6 +60,8 @@ public class GemSocketing {
             Item.Properties properties = new Item.Properties().group(setup.itemGroup);
             event.getRegistry().register(new BlockItem(ModBlocks.AMETHYST_ORE, properties).setRegistryName("amethyst_ore"));
             event.getRegistry().register(new Amethyst());
+            event.getRegistry().register(new BlockItem(ModBlocks.TOPAZORE, properties).setRegistryName("topaz_ore"));
+            event.getRegistry().register(new Topaz());
         }
     }
 }

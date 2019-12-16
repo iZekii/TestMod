@@ -6,4 +6,6 @@ public class ModItems {
 
     @ObjectHolder("gemsocketing:amethyst")
     public static Amethyst AMETHYST;
+    @ObjectHolder("gemsocketing:topaz")
+    public static Topaz TOPAZ;
 }
