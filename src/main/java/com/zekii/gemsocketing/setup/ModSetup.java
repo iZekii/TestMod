@@ -6,10 +6,11 @@ import net.minecraft.item.ItemStack;
 
 public class ModSetup {
 
+    // Make the creative tab
     public ItemGroup itemGroup = new ItemGroup("gemsocketing") {
         @Override
         public ItemStack createIcon() {
-            return new ItemStack(ModBlocks.FUNKYBLOCK);
+            return new ItemStack(ModBlocks.AMETHYST_ORE);
         }
     };
 

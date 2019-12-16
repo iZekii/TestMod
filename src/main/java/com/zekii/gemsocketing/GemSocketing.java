@@ -1,8 +1,8 @@
 package com.zekii.gemsocketing;
 
-import com.zekii.gemsocketing.blocks.FunkyBlock;
+import com.zekii.gemsocketing.blocks.AmethystOre;
 import com.zekii.gemsocketing.blocks.ModBlocks;
-import com.zekii.gemsocketing.items.FunkyItem;
+import com.zekii.gemsocketing.items.Amethyst;
 import com.zekii.gemsocketing.setup.ClientProxy;
 import com.zekii.gemsocketing.setup.IProxy;
 import com.zekii.gemsocketing.setup.ModSetup;
@@ -49,14 +49,14 @@ public class GemSocketing {
     public static class RegistryEvents {
         @SubscribeEvent
         public static void onBlocksRegistry(final RegistryEvent.Register<Block> event) {
-            event.getRegistry().register(new FunkyBlock());
+            event.getRegistry().register(new AmethystOre());
         }
 
         @SubscribeEvent
         public static void onItemsRegistry(final RegistryEvent.Register<Item> event) {
             Item.Properties properties = new Item.Properties().group(setup.itemGroup);
-            event.getRegistry().register(new BlockItem(ModBlocks.FUNKYBLOCK, properties).setRegistryName("funkyblock"));
-            event.getRegistry().register(new FunkyItem());
+            event.getRegistry().register(new BlockItem(ModBlocks.AMETHYST_ORE, properties).setRegistryName("amethyst_ore"));
+            event.getRegistry().register(new Amethyst());
         }
     }
 }
